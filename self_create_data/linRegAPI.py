@@ -12,12 +12,12 @@ label_en_loaded = pickle.load(open("le.obj",'rb'))
 with open("one_hot.pkl",'rb') as f:
     oneHot_en_loaded = pickle.load(f)
 
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET'])
 def index():
-    return 'Hello regression is started'
+    return 'Hello Linear Regression is started'
 
 # Note: we will optimize the code on later classes: just run the lengthy process for now and list append below
-@app.route('/pred', methods=['POST'])
+@app.route('/pred', methods=['POST', 'GET'])
 def pred():
     data =[]
     req = request.get_json()
